@@ -1,8 +1,9 @@
 $(document).ready(function(){
-    var counter = 0;
-    var canvasArray = [];
-    var zip = new JSZip();
-    zip.folder("export");
+  window.chrome ? null : $('#browser-message').show();
+  var counter = 0;
+  var canvasArray = [];
+  var zip = new JSZip();
+  zip.folder("export");
   $("#fileUpload").change(function(){
     formatFiles(this, function(){
       exportFiles()

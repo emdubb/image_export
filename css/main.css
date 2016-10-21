@@ -10,3 +10,40 @@ img {
   display: block;
   width: 40%;
 }
+
+a {
+  text-decoration: none;
+  color: #3496B5;
+}
+
+#browser-message {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+#browser-message div {
+  width: 30%;
+  height: 20%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: white;
+  color: black;
+  transform: translate(-50%, -50%);
+}
+
+#browser-message p {
+  position: absolute;
+  width: 90%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
