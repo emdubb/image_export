@@ -12,6 +12,8 @@ $(document).ready(function(){
 
   function formatFiles(that, callback){
     $("#file-type-error").hide();
+    $("form").hide();
+    $("svg").show();
     var files = that.files
     console.log(files)
     for (var i = 0; i < files.length; i++) {
@@ -26,14 +28,17 @@ $(document).ready(function(){
 
             var img = new Image();
             img.src = url;
-            img.width = img.width / 2
-            img.height = img.height / 2
+            img.width = img.width * 0.75
+            img.height = img.height * 0.75
+
+            // $("body").append(img);
 
             var canvas = document.getElementById("canvas");
             canvas.width = img.width;
             canvas.height = img.height;
             var ctx = canvas.getContext("2d");
             ctx.drawImage(img, 0, 0, img.width, img.height)
+            // ctx.drawImage(img, 0, 0, img.width, img.height)
 
             canvas.toBlob(function(blob){
               zip.file("export/" + name, blob);
@@ -55,10 +60,11 @@ $(document).ready(function(){
   function exportFiles(){
     zip.generateAsync({type:"blob"})
       .then(function(content) {
-          saveAs(content, "export.zip");
-          console.log("finished!")
+        saveAs(content, "export.zip");
+        $("svg").hide();
+        $("form").show();
+        console.log("finished!")
       });
   }
-
 
 })

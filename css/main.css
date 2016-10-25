@@ -16,6 +16,16 @@ a {
   color: #3496B5;
 }
 
+svg {
+  display: none;
+  margin: auto;
+}
+
+svg path,
+svg rect{
+  fill: #FFFFFF;
+}
+
 #browser-message {
   display: none;
   width: 100vw;
